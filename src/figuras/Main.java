@@ -7,16 +7,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		List<StringArt> animales = new ArrayList<StringArt>();
+		animales.add(new Rana());
+		animales.add(new Murcielago());
+		for (StringArt animal : animales) {
+		Dibuja(new Marco(new StringArt2AsciiArt(animal), '#'));
+		}
+		
+		
 		List<AsciiArt> cosas = new ArrayList<AsciiArt>();
 		cosas.add(new Cuadrado(3, 'o'));
-		//cosas.add(new Triangulo(5, 't'));
+		cosas.add(new Triangulo(5, 't'));
 		
 		
 		
 		
 		for(AsciiArt cosa: cosas) {
-			//Dibuja(new DuplicaHorizontal(cosa));
-			Dibuja(new Marco(new DuplicaHorizontal(cosa), 'Â·'));
+			Dibuja(new DuplicaHorizontal(cosa));
+			Dibuja(new Marco(new DuplicaHorizontal(cosa), '·'));
 		
 		}
 		
